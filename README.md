@@ -1,43 +1,28 @@
 
 # Laravel Package Skelton
 
+## Clone this Skelton
+```
+git clone https://github.com/JhomeWu/laravel-package-skeleton.git package_slug
+cd package_slug
+```
+
+## Replace slug to cusomerize your package
 
 Relpace `:vendor_slug` with your vendor\
 Relpace `:package_slug` with your package_slug\
 Relpace `:VendorName` with your VendorName\
 Relpace `:PackageName` with your PackageName\
-```bash
-cp config/config.php.stub config/package_slug
-cp routes/routes.php.stub routes/routes.php.stub
-```
+Relpace `YourGithubAccount` with your github account\
 
-## Installation Package locally
-
-You can install the package via composer:
-Create Package in your project to store package locally
-```bash
-mkdir -p ./packages/:vendor_slug
-cd ./packages/:vendor_slug
-git clone git@github.com:Account/:package_slug.git ./packages/:vendor_slug/:package_slug
-```
-Set composer to get package locally
-```
-composer config repositories.:package_slug '{"type": "path", "url": "./packages/:vendor_slug/:package_slug"}' --file composer.json
-composer require :vendor_slug/:package_slug
-php artisan migrate
-```
-## Format
+## Run below to push to your github repo
 
 ```bash
-composer format
+mv config/config.php.stub config/:package_slug.php
+mv routes/routes.php.stub routes/:package_slug.php
+mv README.md.stab README.md
+git remote set-url origin git@github.com:YourGithubAccount/:package_slug.git
+git add ./
+git cim "Init to :package_slug base on laravel-package-skeleton"
+git push --set-upstream origin master
 ```
-
-## Testing
-
-```bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
