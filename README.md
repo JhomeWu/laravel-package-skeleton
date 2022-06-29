@@ -21,8 +21,11 @@ Relpace `YourGithubAccount` with your github account\
 mv config/config.php.stub config/:package_slug.php
 mv routes/routes.php.stub routes/:package_slug.php
 mv README.md.stab README.md
-git remote set-url origin git@github.com:YourGithubAccount/:package_slug.git
+rm -r .git
+git init
 git add ./
 git cim "Init to :package_slug base on laravel-package-skeleton"
+git branch -M master
+git remote set-url origin git@github.com:YourGithubAccount/:package_slug.git
 git push --set-upstream origin master
 ```
