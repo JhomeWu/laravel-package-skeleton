@@ -5,7 +5,6 @@ You can install the package via composer:
 Create Package in your project to store package locally
 ```bash
 mkdir -p ./packages/:vendor_slug
-cd ./packages/:vendor_slug
 git clone git@github.com:YourGithubAccount/:package_slug.git ./packages/:vendor_slug/:package_slug
 ```
 Set composer to get package locally
